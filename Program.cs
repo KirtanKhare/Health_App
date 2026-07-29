@@ -42,12 +42,19 @@ app.MapPost("/api/items", (CreateItemDto dto) =>
 {
     if (string.IsNullOrWhiteSpace(dto.Name))
     {
-        return Results.BadRequest("Item name is required.");
+        return Results.BadRequest(new
+        {
+            message = "Item name is required."           
+        });
     }
 
+    var nextId = items.ANy()
+        ? items.Max(i => i.Id) + 1
+        : 1;
+    
     var item = new Item
     {
-        Id = items.Count + 1,
+        Id = nextId,
         Name = dto.Name
     };
 
