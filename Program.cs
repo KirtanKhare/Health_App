@@ -21,7 +21,7 @@ app.MapGet("/health", () =>
     return Results.Ok(new
     {
         Status = "Healthy",
-        Name = "Kirtan KHare"
+        Name = "Kirtan Khare"
     });
 });
 
