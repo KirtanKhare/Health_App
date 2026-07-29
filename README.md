@@ -53,7 +53,7 @@ git clone <repository-url>
 Navigate to the project directory:
 
 ```bash
-cd HealthApp
+cd Health_App
 ```
 
 Run the application:
