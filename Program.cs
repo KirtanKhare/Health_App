@@ -48,7 +48,7 @@ app.MapPost("/api/items", (CreateItemDto dto) =>
         });
     }
 
-    var nextId = items.ANy()
+    var nextId = items.Any()
         ? items.Max(i => i.Id) + 1
         : 1;
     
